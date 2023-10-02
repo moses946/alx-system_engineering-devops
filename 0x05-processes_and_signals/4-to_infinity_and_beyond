@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Displays 'To infinity and beyond' indefinetly.
+while true; do
+	echo "To inifity and beyond"
+	sleep 2
+done
