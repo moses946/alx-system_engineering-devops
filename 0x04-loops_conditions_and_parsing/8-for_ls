@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#Display content of the current directory
+for FILE in `ls`
+do
+echo ${FILE#*-}
+done
