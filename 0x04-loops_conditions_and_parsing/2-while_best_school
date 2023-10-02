@@ -3,11 +3,6 @@
 count=1
 while [ $count -le 10 ]
 do
-if [ $count -eq 10 ]
-then
-echo -n "Best School"
-else
 echo "Best School"
-fi
-count=$((count+1))
+((count++))
 done
