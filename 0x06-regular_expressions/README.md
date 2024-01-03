@@ -1,8 +1,3 @@
-<p align="center">
-  <a href="" rel="noopener">
- <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
-</p>
-
 <h3 align="center">REGULAR EXPRESSIONS</h3>
 ---
 
@@ -27,10 +22,12 @@ The focus of this project is to play with regular expressions using ruby followi
 Clone the repository to your machine.
 Run each file eg:
 
-<project-name> <argument>
-'''
-./0-simply_match_school.rb School | cat -e
-'''
+<filename> <argument>
+
+```
+./0-simply_match_school.rb School
+```
+
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
