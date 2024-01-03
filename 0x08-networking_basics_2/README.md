@@ -39,6 +39,12 @@ To Display all active IPv4 IPs on your machine run:
 ./1-show_attached_IPs
 ```
 
+To have your local machine listen on port 98 on localhost:
+
+```
+./100-port_listening_on_localohost
+```
+
 ## ⛏️ Built Using <a name = "built_using"></a>
 
 - [Bash](https://www.gnu.org/software/bash/)
