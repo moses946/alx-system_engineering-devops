@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 # Bash Script that uses ssh to connect to a server using ssh keys.
 
-cat ~/.ssh/school | ssh ubuntu@34.229.70.244 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
-ssh ubuntu@34.229.70.244
+ssh -i "~/.ssh/school" ubuntu@34.229.70.244
