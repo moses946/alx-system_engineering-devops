@@ -25,8 +25,7 @@ if __name__ == "__main__":
     username, tasks = get_data(e_id)
 
     with open(f"{e_id}.csv", "w", newline='') as f:
-        writer = csv.writer(f)
+        writer = csv.writer(f, quoting=csv.QUOTE_ALL)
         for task in tasks:
             writer.writerow(
-                [e_id, username, task.get("completed"), task.get("title")])
-        f.close()
+                [e_id, username, str(task.get("completed")), task.get("title")])
