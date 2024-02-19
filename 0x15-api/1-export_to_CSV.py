@@ -28,4 +28,4 @@ if __name__ == "__main__":
         writer = csv.writer(f, quoting=csv.QUOTE_ALL)
         for task in tasks:
             writer.writerow(
-                [e_id, username, str(task.get("completed")), task.get("title")])
+                [e_id, username, task.get("completed"), task.get("title")])
