@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
     username, tasks = get_data(e_id)
 
-    with open("./USER_ID.csv", "w", newline='') as f:
+    with open(f"{e_id}.csv", "w", newline='') as f:
         writer = csv.writer(f)
         for task in tasks:
             writer.writerow(

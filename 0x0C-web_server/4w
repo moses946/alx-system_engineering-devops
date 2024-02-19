@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+apt install nginx
+echo "
+<html>
+<head>
+</head>
+<body>
+	<p>Ceci n'est pas une page</p>
+</body>
+</html>
+" | tee /usr/share/nginx/html/404.html
+
+echo "
+server { 
+	listen 80;
+	location / {
+		try_files \$uri \$uri/ =404;
+	}
+
+	error_page 404 /404.html;
+}
+" | tee /etc/nginx/sites-available/custom_404.conf
+
+ln -s /etc/nginx/sites-available/custom_404.conf /etc/nginx/sites-enabled
+service restart nginx
