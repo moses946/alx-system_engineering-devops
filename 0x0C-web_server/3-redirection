@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 # Bash script that installs nginx on a server.
-link="https://en.wikipedia.org/wiki/Nginx"
-new_conf="server_name _;\n\trewrite ^/redirect_me/$ $link permanent;"
-
 apt update
 apt-get -y nginx
 ufw allow 'Nginx HTTP'
