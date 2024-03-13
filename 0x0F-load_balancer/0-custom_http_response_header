@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Add a HTTP header that identifies the server
+sed -i 's/server {/server {\n\tadd_header X-Served-By $hostname;/g' /etc/nginx/sites-available/default
