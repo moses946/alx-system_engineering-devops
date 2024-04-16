@@ -3,3 +3,6 @@
 sed -i 's/listen [0-9]*;/listen 80;/' /etc/nginx/sites-available/default
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo service nginx restart
+if ! ufw status | grep -q "80/tcp"; then
+  ufw allow 80/tcp
+fi
