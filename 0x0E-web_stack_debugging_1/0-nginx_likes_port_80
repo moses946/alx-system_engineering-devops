@@ -1,8 +1,17 @@
 #!/usr/bin/env bash
 # Configure the server to enable Nginx on port 80
-sed -i 's/listen [0-9]*;/listen 80;/' /etc/nginx/sites-available/default
-ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-sudo service nginx restart
+if ! systemctl is-active --quiet nginx; then
+  systemctl start nginx
+fi
+
+if ! grep -q "listen 80;" "/etc/nginx/sites-available/default"; then
+    sed -i 's/listen [0-9]*;/listen 80;/' "$config_file"
+fi
+
+ln -sf "/etc/nginx/sites-available/default" "/etc/nginx/sites-enabled/default"
+
+systemctl restart nginx
+
 if ! ufw status | grep -q "80/tcp"; then
   ufw allow 80/tcp
 fi
