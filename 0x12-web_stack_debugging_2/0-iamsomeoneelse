@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 sudo -u "$1" bash << EOF
-whoami
+whoami $1
 EOF
