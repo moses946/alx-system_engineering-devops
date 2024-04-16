@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
-# This script configures the Nginx container to run as the 'nginx' user and listen on port 8080
-apt-get install -y nginx
-useradd -r -s /sbin/nologin nginx
-chown -R nginx:nginx /var/lib/nginx /var/log/nginx /etc/nginx
-sed -i 's/user www-data/user nginx/' /etc/nginx/nginx.conf
-sed -i 's/listen 80/listen 8080/' /etc/nginx/sites-available/default.conf
-exec su-exec nginx nginx -g 'daemon off'
+#Fixes a web server to run nginx as the nginx user listening to port 8080
+sed -i "s/#user www-data/user nginx/" /etc/nginx/nginx.conf
+sed -i "s/80/8080/g" /etc/nginx/sites-available/default
+chmod 644 /etc/nginx/nginx.conf
+pkill apache2
+sudo -u nginx service nginx start
