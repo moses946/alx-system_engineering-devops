@@ -5,7 +5,7 @@ if ! systemctl is-active --quiet nginx; then
 fi
 
 if ! grep -q "listen 80;" "/etc/nginx/sites-available/default"; then
-    sed -i 's/listen [0-9]*;/listen 80;/' "$config_file"
+    sed -i 's/listen [0-9]*;/listen 80;/' "/etc/nginx/sites-available/default"
 fi
 
 ln -sf "/etc/nginx/sites-available/default" "/etc/nginx/sites-enabled/default"
